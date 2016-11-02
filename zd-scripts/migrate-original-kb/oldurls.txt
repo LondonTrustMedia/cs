@@ -1,0 +1,232 @@
+Can I switch between countries and gateways?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/2
+How do I cancel my subscription?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/5
+How do I recover my lost password?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/6
+Do you impose any limitations on usage or bandwidth when using your service?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/8
+Can I use the Private Internet Access service with my router?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/9
+I am receiving an authentication failure error when logging into the VPN service.
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/10
+How do I know if I am connected to and protected by the VPN?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/11
+Am I eligible for a refund after more than 7 days from the sign up date?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/12
+My DD-WRT setup is missing advanced configuration options.
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/13
+I have TAP driver issues/installation errors.
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/14
+Do you log the traffic of your users?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/18
+Where are your servers located?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/19
+Where Can I See If A Particular Server Is Currently Up Or Down?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/20
+The Servers Are Not Where You State They Are
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/25
+Receive Ocra Error When Trying To Install/Run Your Application!
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/26
+Can I change my Private Internet Access user name or account login?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/28
+PFSense 2.0
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/29
+Linux Command Line OpenVPN Installation
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/30
+How do I uninstall and reinstall your application on Windows?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/32
+I can't send email when connected to the VPN
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/33
+Can I change my payment method to a different one?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/35
+Can I configure the VPN on my smart TV or video game console?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/36
+How to locate your Amazon transaction ID
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/37
+How can I change the email address on my account?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/38
+Will my subscription renew automatically?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/40
+Why is the icon for my VPN software not red or green?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/42
+My FTP client will not connect when using the VPN.
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/43
+Is it possible to use OpenVPN on my iPhone or iPad?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/44
+Are there any restrictions on what characters can be used in my password?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/45
+I can't access the internet when I disconnect from the VPN. I am not using the killswitch(Windows).
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/46
+Can the VPN always be connected?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/47
+I am having issues with the VPN software on OSX 10.6 - 10.7.x
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/48
+Can I use OpenVPN on MacOS without your VPN software?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/51
+How can I uninstall/reinstall your application on MacOS?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/52
+How to enable port forwarding in the VPN client
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/53
+How can I make OpenVPN remember my username and password?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/54
+What operating systems are supported?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/55
+What is the difference between the OpenVPN config files on your website?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/57
+I am receiving the error "Warning: route gateway is not reachable on any active network adapters: X.X.X.X" in my debug log
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/58
+I am seeing the error "Create IP forward entry error" in my debug log.
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/59
+What version of OpenSSL is used by Private Internet Access?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/61
+Can I use OpenVPN 2.3.x with Private Internet Access?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/62
+Am I able to use my password management software such as Lastpass with the VPN?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/63
+How can I reduce my latency in online games when using the VPN?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/64
+Why am I having issues downloading your VPN on Windows using Internet Explorer/Edge?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/65
+What is an MTR test, and how do I run it?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/66
+I am unable to connect to the VPN after updating to OSX 10.10 (Yosemite)
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/67
+How do I set up OpenVPN on an Android device?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/68
+Android OpenVPN for restrictive networks
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/70
+Windows Install
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/71
+Why is the VPN switch stuck at connecting?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/72
+How to setup the iOS Application.
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/73
+How do I clear my cookies and browsing history in my internet browser?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/76
+How do I find an IP address for one of your VPN gateways?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/77
+How do I change my current subscription to a yearly payment term?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/78
+Can I resume my recurrent payments if I have cancelled the auto-renewal?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/79
+What methods of payment do you accept for account purchases?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/80
+Can I configure a VPN connection to always use the same IP address?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/82
+How do I locate the Amazon Transaction ID# for my subscription?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/83
+Why am I getting a "919 error" when installing the Android app?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/84
+How do I create a shortcut for the app on my desktop (Win/Mac)?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/85
+How can I pay with Bitcoins?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/86
+Why is the VPN connection not working or very slow when using the PIA App?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/87
+Is your service usable in China?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/88
+How to create a debug log for the PIA client app (Windows/Mac OSX)
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/89
+How can I set up the VPN on Chromebook/ChromeOS?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/90
+How can I set up the VPN on my Windows Phone?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/91
+How to change DNS settings in Windows
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/92
+How do I setup an L2TP connection in Windows 10?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/93
+How do I install or uninstall the Private Internet Access iOS application?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/95
+How to change DNS settings in MacOS
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/96
+How do I disable IPv6 traffic on my Windows computer?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/97
+How do I disable IPv6 traffic on my Mac computer?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/98
+I'm noticing the speed of my connection seems lower than anticipated; what can I do to resolve this?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/99
+Why haven't I received my login information from you?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/100
+Why does your iOS application use IPSec instead of OpenVPN?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/101
+How to setup your Linux system using the MATE desktop environment.
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/102
+Why is there an additional charge of $1 on my statement?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/103
+How do I access my home server while connected to the VPN?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/104
+Why am I getting locked out of my Google account while the VPN is active?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/105
+How can I change the credit card details on my account?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/106
+How can I improve connection speed for a router-based VPN?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/107
+What ports are used by your VPN service?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/108
+Is the PIA VPN software compatible with use of Malwarebytes?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/109
+Why am I getting a "1712" error on my Mac?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/110
+How to repair disk permissions on Mac OSX
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/111
+How to change DNS settings in Android (Wifi only)
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/112
+What can be done about WebRTC issues?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/113
+How To Flush (Clear) DNS Cache Under Ubuntu 12.04/11.10
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/114
+My internet connection stopped working after using the PIA client VPN (Windows).
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/115
+How can I disable debug logging in your Windows application?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/116
+How to enable OpenVPN logging in DD-WRT
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/118
+Do you offer dedicated IP addresses?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/119
+Can I purchase your VPN service and use it anywhere in the world?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/120
+How many devices can I use simultaneously while connected to the VPN service?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/124
+Location-Aware Browsing
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/127
+Uninstalling the Linux Beta Client
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/128
+Changing Ports on Linux
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/130
+How does the VPN work?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/131
+How to perform a clean reinstallation of the Private Internet Access application on Windows 10
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/134
+Help - I can't login!
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/136
+Why am I unable to receive emails from your account system?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/137
+Connectivity Issues on MacOS X with Private Internet Access Application
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/139
+Have Questions Regarding CISA and PIA?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/140
+How do I setup my ASUS router running Merlin firmware?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/142
+How to change DNS settings in iOS (WiFi only)
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/144
+How do I request a refund?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/147
+How do I setup my ASUS router running Padavan firmware?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/148
+OpenVPN setup in Fedora
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/149
+OpenVPN setup in Linux Mint KDE
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/150
+I am receiving an error telling me to use my main username in the new Android release?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/151
+How to change DNS settings in Linux (using Network Manager)
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/152
+How do I find my payment processor ID?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/153
+Why can't I sign up for your service?
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/154
+Regarding the IP Address Leak Vulnerability
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/155
+How to install our VPN Application on Debian Based Linux
+    https://support.privateinternetaccess.com/Knowledgebase/Article/View/156

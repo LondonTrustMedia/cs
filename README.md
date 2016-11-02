@@ -7,6 +7,10 @@ Random scripts and code from the CS team.
 Making a js-based formatter for debug logs, to help out our CS team in interpreting them
 and noticing issues with them.
 
+## zd-scripts
+
+Random collection of Zendesk scripts we've written.
+
 ---
 
 ## Disclaimer

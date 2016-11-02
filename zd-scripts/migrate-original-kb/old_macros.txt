@@ -1,0 +1,21 @@
+> Account::Cannot Receive Login Emails
+> Account::Cannot Resume Recurrent Payments
+> Account::Change Info::Payment Type
+> General::Credential Clarification
+> General::Location Aware Browsing
+> General::Online Gaming
+> Technical::AV::AVG
+> Technical::AV::BitDefender
+> Technical::AV::Comodo Firewall
+> Technical::AV::Windows::App File Exclusions
+> Technical::AV::Windows::Avast
+> Technical::AV::Windows::Kaspersky
+> Technical::AV::ZoneAlarm
+> Technical::App Features::TS::Mac Killswitch First Reply
+> Technical::App Features::TS::Windows Killswitch First Reply
+> Technical::Connectivity::App TLS Error
+> Technical::Connectivity::Browsing Issues (Change DNS)
+> Technical::Speed::Torrents
+> Tier 2::Router::VPN Not Possible (various)
+> Tier 2::Setup::Linux::MATE::Desktop Setup
+
