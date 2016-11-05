@@ -11,6 +11,10 @@ and noticing issues with them.
 
 Random collection of Zendesk scripts we've written.
 
+## shell-scriptsd
+
+Random collection of shell scripts for various tasks.
+
 ---
 
 ## Disclaimer
