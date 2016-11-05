@@ -5,6 +5,10 @@ FIFO=""
 SELF=""
 LOG="log.txt"
 
+function base_benchmark() {
+	speedtest-cli --simple --secure | sed 's/^/    /g'
+}
+
 function benchmark() {
 	nsexe speedtest-cli --simple --secure | sed 's/^/        /g'
 }
@@ -13,8 +17,8 @@ function benchmark() {
 ###################
 
 function init() {
-	FIFO=$PWD/benchmark.fifo
-	SELF=$(which "${BASH_SOURCE[0]}")
+	FIFO=$(realpath "$PWD/benchmark.fifo")
+	SELF=$(realpath "$(which "${BASH_SOURCE[0]}")")
 	
 	mkfifo "$FIFO" || true
 	ip netns add "$NS" || true
@@ -38,7 +42,12 @@ function run() {
 		clean
 		exit -1
 	fi
-	
+
+	# baseline
+	echo "Baseline:"
+	base_benchmark || true
+
+	# test each provider
 	for provider in "$2"/*/; do
 		prettyProvider=${provider#$2/}
 		echo "${prettyProvider%*/}:"
