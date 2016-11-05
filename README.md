@@ -11,13 +11,12 @@ and noticing issues with them.
 
 Random collection of Zendesk scripts we've written.
 
-## shell-scriptsd
+## shell-scripts
 
 Random collection of shell scripts for various tasks.
 
----
 
-## Disclaimer
+# Disclaimer
 
 This repo is the sole property of London Trust Media. This confidential repo contains
 trade secrets and proprietary information relating to Private Internet Access and
