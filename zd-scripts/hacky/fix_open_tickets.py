@@ -9,7 +9,6 @@ import sys
 
 from zdesk import Zendesk
 
-#TODO-XXX-WARNING: PASSWORD IS CONTAINED IN THIS FILE.
 zendesk = Zendesk(os.environ['ZD_URL'], os.environ['ZD_USER'], os.environ['ZD_PASS'])
 
 if False:
