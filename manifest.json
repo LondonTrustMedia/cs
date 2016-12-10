@@ -1,0 +1,19 @@
+{
+	"manifest_version": 2,
+
+	"name": "PIA Utilities",
+	"description": "Tools. Many tools.",
+	"version": "1.0",
+
+	"content_scripts": [
+		{
+			"matches": ["https://files.privateinternetaccess.com/support_support/debug_log/*"],
+			"css": ["build/debuglog.css"],
+			"js": ["src/debuglog.js"]
+		}
+	],
+	
+	"web_accessible_resources": [
+		"src/debuglog.html"
+	]
+}
