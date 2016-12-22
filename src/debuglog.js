@@ -76,6 +76,39 @@ LogViewer.prototype.render_plain = function(titleText, text) {
 };
 
 /**
+ * Renders a parsed multiline section
+ */
+LogViewer.prototype.render_multiline = function(titleText, lines) {
+	var section = document.createElement("section");
+	var title = document.createElement("h3");
+	title.textContent = titleText;
+	var content = document.createElement("pre");
+	
+	lines.forEach(function(line, i) {
+		var lineEl = document.createElement("div");
+		lineEl.className = "log-line " + (i&1 ? "odd" : "even");
+		
+		var span = document.createElement("span");
+		span.className = "date";
+		span.textContent = line.date;
+		lineEl.appendChild(span);
+		
+		span =  document.createElement("span");
+		span.className = "text";
+		span.textContent = line.text;
+		lineEl.appendChild(span);
+		
+		content.appendChild(lineEl);
+	});
+	
+	section.appendChild(title);
+	section.appendChild(content);
+	this.domlog.appendChild(section);
+	
+	return section;
+};
+
+/**
  * Renders the interfaces section
  */
 LogViewer.prototype.render_interfaces = function(text) {
@@ -93,21 +126,30 @@ LogViewer.prototype.render_routes = function(text) {
  * Renders the pia_manager section
  */
 LogViewer.prototype.render_pia_manager = function(text) {
-	this.render_plain("PIA Manager Daemon", text).id = "pia_manager";
+	text = this.helper_removeBasePath(text);
+	text = this.helper_splitDate(text, /^\[[0-9]{2}\/[0-9]{2}\/[0-9]{2,4} [0-9]{2}:[0-9]{2}:[0-9]{2}\] /);
+	
+	this.render_multiline("PIA Manager Daemon", text).id = "pia_manager";
 };
 
 /**
  * Renders the pia_nw section
  */
 LogViewer.prototype.render_pia_nw = function(text) {
-	this.render_plain("PIA NW Tray", text).id = "pia_nw";
+	text = this.helper_removeBasePath(text);
+	text = this.helper_splitDate(text,
+		/^\[[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{2,4}, [0-9]{1,2}:[0-9]{2}:[0-9]{2} (?:AM|PM)\] /);
+	this.render_multiline("PIA NW Tray", text).id = "pia_nw";
 };
 
 /**
  * Renders the openvpn section
  */
 LogViewer.prototype.render_openvpn = function(text) {
-	this.render_plain("OpenVPN", text).id = "openvpn";
+	text = this.helper_removeBasePath(text);
+	text = this.helper_splitDate(text,
+		/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) (?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) [0-9]{1,2} [0-9]{2}:[0-9]{2}:[0-9]{2} [0-9]{4}/);
+	this.render_multiline("OpenVPN", text).id = "openvpn";
 };
 
 /**
@@ -122,6 +164,48 @@ LogViewer.prototype.render_regions = function(json) {
  */
 LogViewer.prototype.render_latencies = function(json) {
 	this.render_plain("latencies", JSON.stringify(json, null, 4)).id = "latencies";
+};
+
+
+/**
+ * Removes PIA's base path(s) from the source file to reduce the line length
+ */
+LogViewer.prototype.helper_removeBasePath = function(text) {
+	return text
+		.replace(/^.*ocr[0-9A-Z]{4}\.tmp(?:\\|\/)/mg, "PIA:")
+		.replace(/C:\\Program Files\\pia_manager/g, "PIA:")
+	;
+};
+
+/**
+ * Splits a log text by lines using the date tag
+ */
+LogViewer.prototype.helper_splitDate = function(text, dateFormat) {
+	var lines = [];
+	var currLine = {date: null, text: ""};
+	
+	text.split("\n").forEach(function(line) {
+		if(line.search(/^[\s\t]*$/) >= 0) {
+			return;
+		}
+		
+		var date = line.match(dateFormat);
+		
+		if(date) {
+			lines.push(currLine);
+			currLine = {date: date[0], text: line.substr(date[0].length) + "\n"};
+		}
+		else {
+			currLine.text += line + "\n";
+		}
+	});
+	
+	// Remove initial empty line
+	if(lines.length > 0 && lines[0].date === null) {
+		lines = lines.slice(1);
+	}
+	
+	return lines;
 };
 
 
