@@ -31,6 +31,7 @@ LogViewer.prototype.renderSections = function(sections) {
  */
 LogViewer.prototype.renderSectionsTemplate = function(html, sections) {
 	this.dom.innerHTML = html;
+	this.domlog = this.dom.querySelector("div.contents");
 	
 	for(var section in sections) {
 		var func = "render_" + section;
@@ -46,6 +47,7 @@ LogViewer.prototype.renderSectionsTemplate = function(html, sections) {
  */
 LogViewer.prototype.render_debug_id = function(id) {
 	this.dom.querySelector("header .log-id").textContent = id;
+	document.title = "Log #" + id + " | PIA Support Tools";
 };
 
 /**
@@ -68,56 +70,58 @@ LogViewer.prototype.render_plain = function(titleText, text) {
 	
 	section.appendChild(title);
 	section.appendChild(content);
-	this.dom.appendChild(section);
+	this.domlog.appendChild(section);
+	
+	return section;
 };
 
 /**
  * Renders the interfaces section
  */
 LogViewer.prototype.render_interfaces = function(text) {
-	this.render_plain("Network Interfaces", text);
+	this.render_plain("Network Interfaces", text).id = "interfaces";
 };
 
 /**
  * Renders the routes section
  */
 LogViewer.prototype.render_routes = function(text) {
-	this.render_plain("Routes", text);
+	this.render_plain("Routes", text).id = "routes";
 };
 
 /**
  * Renders the pia_manager section
  */
 LogViewer.prototype.render_pia_manager = function(text) {
-	this.render_plain("PIA Manager Daemon", text);
+	this.render_plain("PIA Manager Daemon", text).id = "pia_manager";
 };
 
 /**
  * Renders the pia_nw section
  */
 LogViewer.prototype.render_pia_nw = function(text) {
-	this.render_plain("PIA NW Tray", text);
+	this.render_plain("PIA NW Tray", text).id = "pia_nw";
 };
 
 /**
  * Renders the openvpn section
  */
 LogViewer.prototype.render_openvpn = function(text) {
-	this.render_plain("OpenVPN", text);
+	this.render_plain("OpenVPN", text).id = "openvpn";
 };
 
 /**
  * Renders the regions section
  */
 LogViewer.prototype.render_regions = function(json) {
-	this.render_plain("Regions", JSON.stringify(json, null, 4));
+	this.render_plain("Regions", JSON.stringify(json, null, 4)).id = "regions";
 };
 
 /**
  * Renders the latencies section
  */
 LogViewer.prototype.render_latencies = function(json) {
-	this.render_plain("latencies", JSON.stringify(json, null, 4));
+	this.render_plain("latencies", JSON.stringify(json, null, 4)).id = "latencies";
 };
 
 
