@@ -1,4 +1,5 @@
 const http = require("http");
+const config = require("./config");
 
 const modules = ['debuglog'];
 
@@ -13,4 +14,4 @@ http.createServer(function(request, response) {
 		response.statusCode = 404;
 		response.end("Unknown endpoint");
 	}
-}).listen(4001, "::1");
+}).listen(config.http.port, config.http.host);
