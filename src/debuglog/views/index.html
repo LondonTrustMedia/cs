@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title> Log #{{log.id}} | PIA Support Tools </title>
+	<style>{{{css}}}</style>
+</head>
+<body>
+	<header>
+		<div class="log-id">{{log.id}}</div>
+		<div class="app-version">{{log.sysinfo.app_version}}</div>
+		<div class="os">{{log.sysinfo.os_version}}</div>
+	</header>
+
+	<nav>
+		{{#*inline "sectionLink"}}
+			{{#if (lookup log id)}}
+				<a href="#{{id}}" class="button" title="{{tooltip}}">{{text}}</a>
+			{{/if}}
+		{{/inline}}
+		
+		{{> sectionLink id="interfaces"  text="IP"   tooltip="Network Configuration"}}
+		{{> sectionLink id="dns"         text="DNS"  tooltip="DNS Configuration"}}
+		{{> sectionLink id="routes"      text="Ro"   tooltip="Routes"}}
+		{{> sectionLink id="pia_manager" text="Mng"  tooltip="Management Daemon"}}
+		{{> sectionLink id="pia_nw"      text="NW"   tooltip="Tray Application"}}
+		{{> sectionLink id="openvpn"     text="VPN"  tooltip="OpenVPN"}}
+		{{> sectionLink id="regions"     text="Re"   tooltip="Regions"}}
+		{{> sectionLink id="latencies"   text="Ping" tooltip="Latencies"}}
+		{{> sectionLink id="crash"       text="Xx"   tooltip="Crash Logs"}}
+	</nav>
+
+	<div class="contents">
+		{{#*inline "section_plain"}}
+			<section id="{{id}}">
+				<h3>{{title}}</h3>
+				<pre>{{data}}</pre>
+			</section>
+		{{/inline}}
+		
+		{{#*inline "section_multiline"}}
+			<section id="{{id}}">
+				<h3>{{title}}</h3>
+				<div class="log-lines">
+					{{#each data}}
+						<div class="line {{oddEven @index}}">
+							<span class="date">{{date}}</span>
+							<span class="text">{{text}}</span>
+						</div>
+					{{/each}}
+				</div>
+			</section>
+		{{/inline}}
+		
+		{{#if log.interfaces}}
+			{{> section_plain id="interfaces" title="Network Interfaces" data=log.interfaces}}
+		{{/if}}
+		
+		{{#if log.dns}}
+			{{> section_plain id="dns" title="DNS Configuration" data=log.dns}}
+		{{/if}}
+		
+		{{#if log.routes}}
+			{{> section_plain id="routes" title="Routes" data=log.routes}}
+		{{/if}}
+		
+		{{#if log.pia_manager}}
+			{{> section_multiline id="pia_manager" title="Management Daemon" data=log.pia_manager}}
+		{{/if}}
+		
+		{{#if log.pia_nw}}
+			{{> section_multiline id="pia_nw" title="Tray Application" data=log.pia_nw}}
+		{{/if}}
+		
+		{{#if log.openvpn}}
+			{{> section_multiline id="openvpn" title="OpenVPN" data=log.openvpn}}
+		{{/if}}
+		
+		{{#if log.regions}}
+			{{> section_plain id="regions" title="Regions" data=log.regions}}
+		{{/if}}
+		
+		{{#if log.latencies}}
+			{{> section_plain id="latencies" title="Latencies" data=log.latencies}}
+		{{/if}}
+		
+		{{#if log.crash}}
+			{{> section_plain id="crash" title="Crash Dumbs" data=log.crash}}
+		{{/if}}
+	</div>
+</body>
+</html>

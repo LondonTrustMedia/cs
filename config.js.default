@@ -1,0 +1,5 @@
+exports.supportToolsAuth = "Basic XXXXXXX";
+exports.debugLog = {
+	cacheCleanInterval: 5*60*1000,
+	cacheExpire: 6*3600*1000
+};

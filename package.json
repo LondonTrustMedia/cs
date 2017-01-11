@@ -1,0 +1,17 @@
+{
+  "name": "cs-tools",
+  "version": "1.0.0",
+  "description": "Customer support tools",
+  "main": "index.js",
+  "dependencies": {
+    "entities": "^1.1.1",
+    "handlebars": "^4.0.6",
+    "node-sass": "^4.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "UNLICENSED"
+}
