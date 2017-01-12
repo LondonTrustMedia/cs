@@ -72,7 +72,7 @@ const parseSections = [
 	// Network interfaces
 	{
 		section: "interfaces",
-		match: /\nnetinfo\ninterfaces:\n\n/m,
+		match: /\nnetinfo\ninterfaces:\n/m,
 		parse: formatPlain
 	},
 	
@@ -80,6 +80,13 @@ const parseSections = [
 	{
 		section: "routes",
 		match: /\nroutes:\n/m,
+		parse: formatPlain
+	},
+	
+	// DNS
+	{
+		section: "dns",
+		match: /\n\ndns:\n/m,
 		parse: formatPlain
 	},
 	
