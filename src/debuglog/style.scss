@@ -113,5 +113,9 @@ section {
 		&:hover {
 			background: #EEF5EF;
 		}
+		
+		&:target {
+			background: #FFF4C1;
+		}
 	}
 }
