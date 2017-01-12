@@ -4,6 +4,8 @@ const Handlebars = require("handlebars").create();
 const sass       = require("node-sass");
 const entities   = require("entities");
 const Log        = require("./logv1");
+const SupportTools = require("../support-tools");
+const streamToString = require("../utils").streamToString;
 const config     = require("../../config");
 
 // HTML Render template
@@ -32,6 +34,21 @@ setInterval(function() {
 		}
 	});
 }, config.debugLog.cacheCleanInterval);
+
+
+// Support tools access
+var supportTools = new SupportTools(config.supportTools.user, config.supportTools.password);
+
+function connectSupportTools() {
+	supportTools.authenticate(config.supportTools.keepaliveInterval, function() {
+		console.log("Support tools online");
+	}, function(error) {
+		console.error("Support tools failed, retrying...", error);
+		setTimeout(connectSupportTools, config.supportTools.retryInterval);
+	});
+}
+
+connectSupportTools();
 
 
 /**
@@ -69,14 +86,16 @@ module.exports = function(request, response) {
 	
 	
 	// Not a cached log, request from the support tools
-	https.request({
+	if(!supportTools.isReady) {
+		response.statusCode = 502;
+		return response.end("Support tools service is currently offline. Try again later.");
+	}
+	
+	supportTools.request({
 		hostname: "files.privateinternetaccess.com",
 		port: 443,
 		path: "/support_support/debug_log" + request.url,
-		method: "GET",
-		headers: {
-			Authorization: config.supportToolsAuth
-		}
+		method: "GET"
 	})
 	.on("response", function(res) {
 		if(res.statusCode > 500) {
@@ -95,13 +114,7 @@ module.exports = function(request, response) {
 			return;
 		}
 		
-		let logdata = "";
-		
-		res.on("data", function(data) {
-			logdata += data;
-		});
-		
-		res.on("end", function() {
+		streamToString(res, function(logdata) {
 			logdata = logdata.replace(/^[^]*?<pre>([^]*)<\/pre>[^]*?$/, "$1");
 			logdata = entities.decodeHTML(logdata);
 			

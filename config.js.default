@@ -3,7 +3,14 @@ exports.http = {
 	port: 8080
 };
 
-exports.supportToolsAuth = "Basic XXXXXXX";
+exports.supportTools = {
+	user: "",
+	password: "",
+	keepaliveInterval: 300000,
+	retryInterval: 5000
+};
+
+exports.supportToolsKeepalive = 300000;
 
 exports.debugLog = {
 	cacheCleanInterval: 5*60*1000,

@@ -1,14 +1,16 @@
 const http = require("http");
 const config = require("./config");
 
-const modules = ['debuglog'];
+const modules = {
+	debuglog: require("./src/debuglog/")
+};
 
 http.createServer(function(request, response) {
 	let components = request.url.split("/");
 	
-	if(modules.indexOf(components[1]) !== -1) {
+	if(components[1] in modules) {
 		request.url = "/" + components.slice(2).join("/");
-		require("./src/debuglog/")(request, response);
+		modules[components[1]](request, response);
 	}
 	else {
 		response.statusCode = 404;
