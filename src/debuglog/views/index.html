@@ -43,8 +43,8 @@
 				<h3>{{title}}</h3>
 				<div class="log-lines">
 					{{#each data}}
-						<div class="line {{oddEven @index}}">
-							<span class="date">{{date}}</span>
+						<div id="{{../id}}:{{@index}}" class="line {{oddEven @index}}">
+							<a href="#{{../id}}:{{@index}}" class="date">{{date}}</a>
 							<span class="text">{{text}}</span>
 						</div>
 					{{/each}}
