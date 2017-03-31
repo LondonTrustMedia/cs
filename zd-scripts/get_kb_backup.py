@@ -10,7 +10,7 @@ from zdesk import Zendesk
 
 zendesk = Zendesk(os.environ['ZD_URL'], os.environ['ZD_USER'], os.environ['ZD_PASS'])
 
-articles = zendesk.help_center_articles('en-us', get_all_pages=True)['articles']
+articles = zendesk.help_center_articles_list('en-us', get_all_pages=True)['articles']
 
 with open('articles_backup.json', 'w') as backup_file:
     backup_file.write(json.dumps(articles, indent=4, separators=(',', ': ')))
