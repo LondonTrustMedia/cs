@@ -6,7 +6,7 @@ body {
   font-family: sans-serif;
   color: #333333;
   background: #D2E9D5;
-  padding: 40px 0 0 50px;
+  padding: 40px 0 0 60px;
   margin-top: -50px; }
 
 header {
@@ -25,13 +25,17 @@ header {
 	height: 100%; }
   header div.log-id {
 	background: #4ABF5A;
-	width: 50px;
-	max-width: 50px;
+	width: 60px;
+	max-width: 60px;
 	padding: 0;
 	flex-shrink: 0;
 	text-align: center; }
 	header div.log-id:before {
-	  content: "#"; }
+		content: "Log ID:";
+		display: block;
+		font-size: 0.6em;
+		height: 1.6em;
+		margin-top: -0.85em; }
   header div.app-version {
 	background: #47B856; }
 	header div.app-version:before {
@@ -42,7 +46,7 @@ nav {
   top: 40px;
   left: 0;
   bottom: 0;
-  width: 50px;
+  width: 60px;
   background: #39B54A; }
   nav a.button {
 	display: block;
@@ -280,11 +284,7 @@ const LogParser = (function() {
 			section: "id",
 			match: /(^|\n)debug_id\n/m,
 			parse: function(data) {
-				try {
-					return parseInt(data, 10);
-				} catch(e) {
-					return 0;
-				}
+				return data;
 			}
 		},
 		
