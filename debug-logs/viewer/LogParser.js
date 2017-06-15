@@ -98,7 +98,10 @@ const LogParser = (function() {
 			parse: function(data) {
 				return splitDates(
 					removeBasePath(data),
-					/^\[[0-9]{2}\/[0-9]{2}\/[0-9]{2,4} [0-9]{2}:[0-9]{2}:[0-9]{2}\] /
+					[
+						/^\[[0-9]{2}\/[0-9]{2}\/[0-9]{2,4} [0-9]{2}:[0-9]{2}:[0-9]{2}\] /,
+						/^\[[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{3}Z\] /,
+					]
 				);
 			}
 		},
@@ -110,7 +113,10 @@ const LogParser = (function() {
 			parse: function(data) {
 				return splitDates(
 					removeBasePath(data),
-					/^\[[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{2,4}, [0-9]{1,2}:[0-9]{2}:[0-9]{2} (?:AM|PM)\] /
+					[
+						/^\[[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{2,4}, [0-9]{1,2}:[0-9]{2}:[0-9]{2} (?:AM|PM)\] /,
+						/^\[[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{3}Z\] /,
+					]
 				);
 			}
 		},
@@ -122,7 +128,7 @@ const LogParser = (function() {
 			parse: function(data) {
 				return splitDates(
 					removeBasePath(data),
-					/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) (?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (?: [0-9]|[0-9]{1,2}) [0-9]{2}:[0-9]{2}:[0-9]{2} [0-9]{4}/
+					[/^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) (?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (?: [0-9]|[0-9]{1,2}) [0-9]{2}:[0-9]{2}:[0-9]{2} [0-9]{4}/,]
 				);
 			}
 		},
@@ -195,7 +201,14 @@ const LogParser = (function() {
 				return;
 			}
 			
-			var date = line.match(dateFormat);
+			var date = [];
+
+			for (var i = 0; i < dateFormat.length; i++) {
+				date = line.match(dateFormat[i]);
+				if (date) {
+					break;
+				}
+			}
 			
 			if(date) {
 				lines.push(currLine);
