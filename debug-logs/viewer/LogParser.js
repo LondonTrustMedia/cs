@@ -55,11 +55,7 @@ const LogParser = (function() {
 			section: "id",
 			match: /(^|\n)debug_id\n/m,
 			parse: function(data) {
-				try {
-					return parseInt(data, 10);
-				} catch(e) {
-					return 0;
-				}
+				return data;
 			}
 		},
 		
