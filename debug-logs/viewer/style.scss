@@ -7,16 +7,19 @@ body {
 	color: #333333;
 	background: #D2E9D5;
 	padding: 40px 0 0 50px;
+	margin-top: -50px;
 }
 	
 header {
+	display: flex;
 	position: fixed; top: 0; left: 0; right: 0;
 	height: 40px; line-height: 40px;
 	background: #39B54A; color: white;
 	
 	> div {
-		padding: 0 10px; height: 100%;
-		float: left;
+		padding: 0 10px;
+		height: 100%;
+		white-space: nowrap;
 	}
 	
 	div.log-id {
@@ -24,6 +27,7 @@ header {
 		width: 50px; max-width: 50px;
 		padding: 0;
 		text-align: center;
+		flex-shrink: 0;
 		
 		&:before {
 			content: "#";
@@ -63,13 +67,19 @@ nav {
 section {
 	margin: 10px;
 	overflow: hidden;
-	background: #fafafa;
+	padding-top: 50px;
 	border-radius: 4px;
 	
 	h3 {
 		margin: 0; padding: 5px 10px;
+		border-radius: 4px 4px 0 0;
 		background: #1F9A2E;
 		color: white;
+	}
+
+	section pre, section div.log-lines {
+		background: #fafafa;
+		margin-top: 0;
 	}
 	
 	pre {
