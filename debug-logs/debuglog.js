@@ -1,4 +1,5 @@
-const DEBUGLOG_CSS = `html, body {
+const DEBUGLOG_CSS = `
+html, body {
   margin: 0;
   padding: 0; }
 
@@ -20,26 +21,26 @@ header {
   background: #39B54A;
   color: white; }
   header > div {
-	white-space: nowrap;
-	padding: 0 10px;
-	height: 100%; }
+    padding: 0 10px;
+    height: 100%;
+    white-space: nowrap; }
   header div.log-id {
-	background: #4ABF5A;
-	width: 60px;
-	max-width: 60px;
-	padding: 0;
-	flex-shrink: 0;
-	text-align: center; }
-	header div.log-id:before {
-		content: "Log ID:";
-		display: block;
-		font-size: 0.6em;
-		height: 1.6em;
-		margin-top: -0.85em; }
+    background: #4ABF5A;
+    width: 60px;
+    max-width: 60px;
+    padding: 0;
+    text-align: center;
+    flex-shrink: 0; }
+    header div.log-id:before {
+      content: "Log ID:";
+      display: block;
+      font-size: 0.6em;
+      height: 1.6em;
+      margin-top: -0.85em; }
   header div.app-version {
-	background: #47B856; }
-	header div.app-version:before {
-	  content: "v"; }
+    background: #47B856; }
+    header div.app-version:before {
+      content: "v"; }
 
 nav {
   position: fixed;
@@ -49,18 +50,18 @@ nav {
   width: 60px;
   background: #39B54A; }
   nav a.button {
-	display: block;
-	margin: 5px;
-	padding: 0;
-	text-align: center;
-	line-height: 40px;
-	color: white;
-	text-decoration: none;
-	background: #4ABF5A;
-	border-radius: 5px;
-	transition: background 60ms; }
-	nav a.button:hover {
-	  background: #57E069; }
+    display: block;
+    margin: 5px;
+    padding: 0;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    text-decoration: none;
+    background: #4ABF5A;
+    border-radius: 5px;
+    transition: background 60ms; }
+    nav a.button:hover {
+      background: #57E069; }
 
 section {
   margin: 10px;
@@ -68,45 +69,45 @@ section {
   padding-top: 50px;
   border-radius: 4px; }
   section h3 {
-	margin: 0;
-	padding: 5px 10px;
-	background: #1F9A2E;
-	border-radius: 4px 4px 0 0;
-	color: white; }
+    margin: 0;
+    padding: 5px 10px;
+    border-radius: 4px 4px 0 0;
+    background: #1F9A2E;
+    color: white; }
   section pre, section div.log-lines {
-	background: #fafafa;
-	margin-top: 0; }
+    background: #fafafa;
+    margin-top: 0; }
   section pre {
-	padding: 10px;
-	overflow-y: hidden;
-	overflow-x: auto;
-	white-space: pre-wrap; }
+    padding: 10px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: pre-wrap; }
   section div.log-lines {
-	padding: 10px;
-	overflow-y: hidden;
-	overflow-x: auto;
-	font-family: monospace;
-	font-size: 13px; }
+    padding: 10px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    font-family: monospace;
+    font-size: 13px; }
   section div.log-lines div.line {
-	display: flex;
-	transition: background 45ms;
-	border-radius: 3px; }
-	section div.log-lines div.line .date {
-	  padding: 3px 5px;
-	  color: #acacac;
-	  white-space: nowrap;
-	  text-decoration: none; }
-	section div.log-lines div.line .text {
-	  padding: 3px 5px;
-	  color: #333333;
-	  line-height: 150%;
-	  white-space: pre; }
-	section div.log-lines div.line.odd {
-	  background: #f5f5f5; }
-	section div.log-lines div.line:hover {
-	  background: #EEF5EF; }
-	section div.log-lines div.line:target {
-	  background: #FFF4C1; }
+    display: flex;
+    transition: background 45ms;
+    border-radius: 3px; }
+    section div.log-lines div.line .date {
+      padding: 3px 5px;
+      color: #acacac;
+      white-space: nowrap;
+      text-decoration: none; }
+    section div.log-lines div.line .text {
+      padding: 3px 5px;
+      color: #333333;
+      line-height: 150%;
+      white-space: pre; }
+    section div.log-lines div.line.odd {
+      background: #f5f5f5; }
+    section div.log-lines div.line:hover {
+      background: #EEF5EF; }
+    section div.log-lines div.line:target {
+      background: #FFF4C1; }
 `;
 const renderDebugLog = (function(css) {
 	const navSections = {
@@ -434,7 +435,7 @@ const LogParser = (function() {
 					break;
 				}
 			}
-
+			
 			if(date) {
 				lines.push(currLine);
 				currLine = {date: date[0], text: line.substr(date[0].length) + "\n"};
