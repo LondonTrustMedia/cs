@@ -25,6 +25,7 @@ const renderDebugLog = (function(css) {
 	<header>
 		<div class="log-id">${esc(log.id)}</div>
 		<div class="app-version">${esc(log.sysinfo.app_version)}</div>
+		${renderDevice(log.sysinfo.device)}
 		<div class="os">${esc(log.sysinfo.os_version)}</div>
 	</header>
 
@@ -46,6 +47,17 @@ const renderDebugLog = (function(css) {
 	</div>
 </body>
 </html>`;
+	}
+
+
+	/**
+	 * Renders the device info if it should be there
+	 */
+	function renderDevice(device) {
+		if (device) {
+			return `<div class="device">${esc(device)}</div>`
+		}
+		return "";
 	}
 	
 	

@@ -41,6 +41,9 @@ header {
     background: #47B856; }
     header div.app-version:before {
       content: "v"; }
+  header div.device {
+    background: #47B856;
+    border-left: 2px solid #39B54A; }
 
 nav {
   position: fixed;
@@ -136,6 +139,7 @@ const renderDebugLog = (function(css) {
 	<header>
 		<div class="log-id">${esc(log.id)}</div>
 		<div class="app-version">${esc(log.sysinfo.app_version)}</div>
+		${renderDevice(log.sysinfo.device)}
 		<div class="os">${esc(log.sysinfo.os_version)}</div>
 	</header>
 
@@ -157,6 +161,17 @@ const renderDebugLog = (function(css) {
 	</div>
 </body>
 </html>`;
+	}
+
+
+	/**
+	 * Renders the device info if it should be there
+	 */
+	function renderDevice(device) {
+		if (device) {
+			return `<div class="device">${esc(device)}</div>`
+		}
+		return "";
 	}
 	
 	
