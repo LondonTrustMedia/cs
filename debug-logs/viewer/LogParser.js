@@ -126,6 +126,9 @@ const LogParser = (function() {
 					removeBasePath(data),
 					[
 						/^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{3} /,
+					],
+					[
+						"--- EOF ---",
 					]
 				);
 			}
@@ -202,9 +205,10 @@ const LogParser = (function() {
 	 * Splits a log text into lines using the date marker as the new line indicator
 	 * (for multiline entries like stack traces)
 	 */
-	function splitDates(text, dateFormat) {
+	function splitDates(text, dateFormat, specialLines) {
 		var lines = [];
 		var currLine = {date: null, text: ""};
+		specialLines = specialLines || [];
 		
 		text.split("\n").forEach(function(line) {
 			if(line.search(/^[\s\t]*$/) >= 0) {
@@ -220,6 +224,15 @@ const LogParser = (function() {
 				}
 			}
 			
+			// check special lines and break out early
+			for (var i = 0; i < specialLines.length; i++) {
+				if (line == specialLines[i]) {
+					lines.push(currLine);
+					currLine = {date: "", text: line + "\n"};
+					return
+				}
+			}
+
 			if(date) {
 				lines.push(currLine);
 				currLine = {date: date[0], text: line.substr(date[0].length) + "\n"};
