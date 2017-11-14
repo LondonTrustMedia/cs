@@ -5,6 +5,7 @@ const renderDebugLog = (function(css) {
 		routes:      {text: "Ro",   tooltip: "Routes"},
 		pia_manager: {text: "Mng",  tooltip: "Management Daemon"},
 		pia_nw:      {text: "NW",   tooltip: "Tray Application"},
+		pia_log:     {text: "VPN",  tooltip: "PIA Protocol Log"},
 		openvpn:     {text: "VPN",  tooltip: "OpenVPN"},
 		regions:     {text: "Re",   tooltip: "Regions"},
 		latencies:   {text: "Ping", tooltip: "Latencies"},
@@ -37,6 +38,7 @@ const renderDebugLog = (function(css) {
 		${renderLogPlain(log, "routes", "Routes")}
 		${renderLogMultiline(log, "pia_manager", "Management Daemon")}
 		${renderLogMultiline(log, "pia_nw", "Tray Application")}
+		${renderLogMultiline(log, "pia_log", "PIA Protocol Log")}
 		${renderLogMultiline(log, "openvpn", "OpenVPN")}
 		${renderLogPlain(log, "regions", "Regions")}
 		${renderLogPlain(log, "latencies", "Latencies")}

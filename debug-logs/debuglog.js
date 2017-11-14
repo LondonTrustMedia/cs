@@ -116,6 +116,7 @@ const renderDebugLog = (function(css) {
 		routes:      {text: "Ro",   tooltip: "Routes"},
 		pia_manager: {text: "Mng",  tooltip: "Management Daemon"},
 		pia_nw:      {text: "NW",   tooltip: "Tray Application"},
+		pia_log:     {text: "VPN",  tooltip: "PIA Protocol Log"},
 		openvpn:     {text: "VPN",  tooltip: "OpenVPN"},
 		regions:     {text: "Re",   tooltip: "Regions"},
 		latencies:   {text: "Ping", tooltip: "Latencies"},
@@ -148,6 +149,7 @@ const renderDebugLog = (function(css) {
 		${renderLogPlain(log, "routes", "Routes")}
 		${renderLogMultiline(log, "pia_manager", "Management Daemon")}
 		${renderLogMultiline(log, "pia_nw", "Tray Application")}
+		${renderLogMultiline(log, "pia_log", "PIA Protocol Log")}
 		${renderLogMultiline(log, "openvpn", "OpenVPN")}
 		${renderLogPlain(log, "regions", "Regions")}
 		${renderLogPlain(log, "latencies", "Latencies")}
@@ -347,6 +349,20 @@ const LogParser = (function() {
 			}
 		},
 		
+		// PIA protocol log
+		{
+			section: "pia_log",
+			match: /\npia_log\n/m,
+			parse: function(data) {
+				return splitDates(
+					removeBasePath(data),
+					[
+						/^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{3} /,
+					]
+				);
+			}
+		},
+		
 		// OpenVPN
 		{
 			section: "openvpn",
@@ -444,7 +460,7 @@ const LogParser = (function() {
 				currLine.text += line + "\n";
 			}
 		});
-		
+
 		// Remove initial empty line
 		if(lines.length > 0 && lines[0].date === null) {
 			lines = lines.slice(1);
