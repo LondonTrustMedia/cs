@@ -38,7 +38,7 @@ const LogParser = (function() {
 		for(let i = 0; i < matches.length; i++) {
 			let m = matches[i];
 			let end = (i+1 in matches) ? matches[i+1].match.index : log.length;
-			let data = log.slice(m.match.index + m.match[0].length, end);
+			let data = log.slice(m.match.index + m.match[0].length, end).trim();
 			sections[m.section.section] = m.section.parse(data);
 		}
 		
@@ -87,6 +87,13 @@ const LogParser = (function() {
 			parse: formatPlain
 		},
 		
+		// OpenVPN Config
+		{
+			section: "openvpn_config",
+			match: /\n\openvpn_config\n/m,
+			parse: formatPlain
+		},
+		
 		// Management daemon
 		{
 			section: "pia_manager",
@@ -126,6 +133,7 @@ const LogParser = (function() {
 					removeBasePath(data),
 					[
 						/^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{3} /,
+						/^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2} /,
 					],
 					[
 						"--- EOF ---",

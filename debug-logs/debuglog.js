@@ -117,6 +117,7 @@ const renderDebugLog = (function(css) {
 		interfaces:  {text: "IP",   tooltip: "Network Configuration"},
 		dns:         {text: "DNS",  tooltip: "DNS Configuration"},
 		routes:      {text: "Ro",   tooltip: "Routes"},
+		openvpn_config: {text: "Conf",  tooltip: "OpenVPN Configuration"},
 		pia_manager: {text: "Mng",  tooltip: "Management Daemon"},
 		pia_nw:      {text: "NW",   tooltip: "Tray Application"},
 		pia_log:     {text: "VPN",  tooltip: "PIA Protocol Log"},
@@ -151,6 +152,7 @@ const renderDebugLog = (function(css) {
 		${renderLogPlain(log, "interfaces", "Network Interfaces")}
 		${renderLogPlain(log, "dns", "DNS Configuration")}
 		${renderLogPlain(log, "routes", "Routes")}
+		${renderLogPlain(log, "openvpn_config", "OpenVPN Configuration")}
 		${renderLogMultiline(log, "pia_manager", "Management Daemon")}
 		${renderLogMultiline(log, "pia_nw", "Tray Application")}
 		${renderLogMultiline(log, "pia_log", "PIA Protocol Log")}
@@ -233,15 +235,19 @@ const renderDebugLog = (function(css) {
 	 * Poor man's HTML escaping
 	 */
 	function esc(str) {
-		if(!str) return "";
-		if(typeof str === "number") return str;
+		if(!str) {
+			return "";
+		}
+		if(typeof str === "number") {
+			return str;
+		}
 		
 		return str
-			.replace("&", "&amp;")
-			.replace("<", "&lt;")
-			.replace(">", "&gt;")
-			.replace('"', "&quot;")
-			.replace("'", "&#039;")
+			.replace(/&/g, "&amp;")
+			.replace(/</g, "&lt;")
+			.replace(/>/g, "&gt;")
+			.replace(/"/g, "&quot;")
+			.replace(/'/g, "&#039;")
 		;
 	}
 })(DEBUGLOG_CSS);
@@ -285,7 +291,7 @@ const LogParser = (function() {
 		for(let i = 0; i < matches.length; i++) {
 			let m = matches[i];
 			let end = (i+1 in matches) ? matches[i+1].match.index : log.length;
-			let data = log.slice(m.match.index + m.match[0].length, end);
+			let data = log.slice(m.match.index + m.match[0].length, end).trim();
 			sections[m.section.section] = m.section.parse(data);
 		}
 		
@@ -334,6 +340,13 @@ const LogParser = (function() {
 			parse: formatPlain
 		},
 		
+		// OpenVPN Config
+		{
+			section: "openvpn_config",
+			match: /\n\openvpn_config\n/m,
+			parse: formatPlain
+		},
+		
 		// Management daemon
 		{
 			section: "pia_manager",
@@ -373,6 +386,7 @@ const LogParser = (function() {
 					removeBasePath(data),
 					[
 						/^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{3} /,
+						/^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2} /,
 					],
 					[
 						"--- EOF ---",
